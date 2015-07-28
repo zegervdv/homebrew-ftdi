@@ -1,0 +1,4 @@
+3351c3351
+< CFLAGS="-Wall -fPIC -fno-strict-aliasing $CFLAGS"
+---
+> CFLAGS="-Wall -fPIC -fno-strict-aliasing -DLIBFTDI1=\$(LIBFTDI1) $CFLAGS"

@@ -1,0 +1,18 @@
+29c29
+< 	$(CC) $(CFLAGS) $(LDFLAGS) -DLIBFTDI1=$(LIBFTDI1) -c mpsse.c
+---
+> 	$(CC) $(CFLAGS) $(LDFLAGS) -c mpsse.c
+35c35
+< 	$(CC) $(CFLAGS) $(LDFLAGS) -DLIBFTDI1=$(LIBFTDI1) -c support.c
+---
+> 	$(CC) $(CFLAGS) $(LDFLAGS) -c support.c
+38,39c38,39
+< 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -DLIBFTDI1=$(LIBFTDI1) -c support.c
+< 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -DLIBFTDI1=$(LIBFTDI1) -c mpsse.c
+---
+> 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -c support.c
+> 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -c mpsse.c
+41c41
+< 	$(CC) $(CFLAGS) -c  -DLIBFTDI1=$(LIBFTDI1) $(TARGET)_wrap.c  $(INC)
+---
+> 	$(CC) $(CFLAGS) -c  $(TARGET)_wrap.c  $(INC)
