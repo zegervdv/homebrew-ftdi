@@ -1,4 +1,19 @@
-3351c3351
-< CFLAGS="-Wall -fPIC -fno-strict-aliasing $CFLAGS"
----
-> CFLAGS="-Wall -fPIC -fno-strict-aliasing -DLIBFTDI1=\$(LIBFTDI1) $CFLAGS"
+*** configure	2013-04-19 04:12:59.000000000 +0200
+--- configure-patched	2015-07-28 09:22:22.000000000 +0200
+*************** fi
+*** 3348,3354 ****
+  
+  
+  
+! CFLAGS="-Wall -fPIC -fno-strict-aliasing $CFLAGS"
+  
+  for ac_header in libftdi1/ftdi.h
+  do :
+--- 3348,3354 ----
+  
+  
+  
+! CFLAGS="-Wall -fPIC -fno-strict-aliasing -DLIBFTDI1=\$(LIBFTDI1) $CFLAGS"
+  
+  for ac_header in libftdi1/ftdi.h
+  do :
