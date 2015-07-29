@@ -33,7 +33,7 @@ class Libmpsse < Formula
       pydev = `python-config --includes`.match /-I([^ ]*)/
       pyflags = `python-config --ldflags`
       ENV.prepend_create_path "PYDEV", pydev[1]
-      ENV.prepend_create_path "PYLIB", libexec/"lib/python2.7/site-packages"
+      ENV.prepend_create_path "PYLIB", lib/"lib/python2.7/site-packages"
       ENV.prepend_create_path "LDFLAGS", pyflags
       system "./configure", "--disable-debug",
                             "--disable-dependency-tracking",

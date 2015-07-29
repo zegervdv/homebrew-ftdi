@@ -1,5 +1,15 @@
-*** src/Makefile.in	2013-04-19 04:12:59.000000000 +0200
---- src/Makefile-patched.in	2015-07-28 10:08:02.000000000 +0200
+*** src/Makefile.in	2015-07-29 12:00:17.000000000 +0200
+--- src/Makefile-patched.in	2015-07-29 11:59:33.000000000 +0200
+*************** SWIG=@SWIG@
+*** 3,9 ****
+  PYDEV=@PYDEV@
+  PYLIB=@PYLIB@
+  SONAME=@SONAME@
+- FRAMEWORK=@FRAMEWORK@
+  BUILD=@BUILD@
+  LDFLAGS=@LDFLAGS@
+  CFLAGS=@CFLAGS@
+--- 3,8 ----
 *************** example-code:
 *** 26,51 ****
   	make -C examples
@@ -18,7 +28,7 @@
 ! 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -DLIBFTDI1=$(LIBFTDI1) -c mpsse.c
   	$(SWIG) -python $(TARGET).i
 ! 	$(CC) $(CFLAGS) -c  -DLIBFTDI1=$(LIBFTDI1) $(TARGET)_wrap.c  $(INC)
-  	$(CC) $(CFLAGS) -shared $(FRAMEWORK) $(TARGET)_wrap.o mpsse.o support.o \
+! 	$(CC) $(CFLAGS) -shared $(FRAMEWORK) $(TARGET)_wrap.o mpsse.o support.o \
   		-o _pylib$(TARGET).so $(LDFLAGS) $(INC)
   
   pyswig-install:
@@ -28,7 +38,7 @@
   
   pyswig-uninstall:
   	rm -f $(DESTDIR)/$(PYLIB)/$(TARGET).* \
---- 26,51 ----
+--- 25,50 ----
   	make -C examples
   
   mpsse.o: support.o
@@ -45,7 +55,7 @@
 ! 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -c mpsse.c
   	$(SWIG) -python $(TARGET).i
 ! 	$(CC) $(CFLAGS) -c  $(TARGET)_wrap.c  $(INC)
-  	$(CC) $(CFLAGS) -shared $(FRAMEWORK) $(TARGET)_wrap.o mpsse.o support.o \
+! 	$(CC) $(CFLAGS) -shared $(TARGET)_wrap.o mpsse.o support.o \
   		-o _pylib$(TARGET).so $(LDFLAGS) $(INC)
   
   pyswig-install:
@@ -66,7 +76,7 @@
   
   uninstall: py$(BUILD)-uninstall
   	rm -f $(DESTDIR)/$(LIBDIR)/lib$(TARGET).so \
---- 58,66 ----
+--- 57,65 ----
   py-uninstall:
   
   install: py$(BUILD)-install
