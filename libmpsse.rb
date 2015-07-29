@@ -16,7 +16,7 @@ class Libmpsse < Formula
 
   patch :p0 do
     url 'https://github.com/zegervdv/homebrew-ftdi/raw/master/Makefile.in.patch'
-    sha1 '139f6399b680ecb565c9ccdd5199a76d972d069e'
+    sha1 '992c0965f3037d159baed587a3a3d5e08ef6d6c6'
   end
 
   patch :p0 do
@@ -33,7 +33,7 @@ class Libmpsse < Formula
       pydev = `python-config --includes`.match /-I([^ ]*)/
       pyflags = `python-config --ldflags`
       ENV.prepend_create_path "PYDEV", pydev[1]
-      ENV.prepend_create_path "PYLIB", lib/"lib/python2.7/site-packages"
+      ENV.prepend_create_path "PYLIB", lib/"python2.7/site-packages"
       ENV.prepend_create_path "LDFLAGS", pyflags
       system "./configure", "--disable-debug",
                             "--disable-dependency-tracking",
