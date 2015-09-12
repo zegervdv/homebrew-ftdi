@@ -20,10 +20,19 @@ class Libmpsse < Formula
   end
 
   patch :p0 do
-    url 'https://github.com/zegervdv/homebrew-ftdi/raw/master/configure.patch'
-    sha1 '5ffbc69853f1f24fa4a6cd4452030cc515ad1eb5'
+    url 'https://raw.githubusercontent.com/zegervdv/homebrew-ftdi/master/mpsse.c.patch'
+    sha1 '51c4b6b6eb2b0b5dc3f10ef8d5f8f9dfd40fc02d'
   end
 
+  patch :p0 do
+    url 'https://raw.githubusercontent.com/zegervdv/homebrew-ftdi/master/mpsse.h.patch'
+    sha1 '16fd372972e70cee14d4bc93f51bcc8ce6a7ef62'
+  end
+
+  patch :p0 do
+    url 'https://raw.githubusercontent.com/zegervdv/homebrew-ftdi/master/support.c.patch'
+    sha1 'a65aa65ad4e2e354b744267e02323b43f91d53f2'
+  end
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
