@@ -1,0 +1,16 @@
+*** src/mpsse.h.orig	2015-09-12 14:42:09.817186505 +0000
+--- src/mpsse.h	2015-09-12 14:43:10.787655630 +0000
+***************
+*** 3,13 ****
+  
+  #include <stdint.h>
+  
+- #if LIBFTDI1 == 1
+  #include <libftdi1/ftdi.h>
+- #else
+- #include <ftdi.h>
+- #endif
+  
+  #define MPSSE_OK		0
+  #define MPSSE_FAIL		-1
+--- 3,9 ----

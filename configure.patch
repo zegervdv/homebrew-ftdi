@@ -1,19 +1,19 @@
-*** src/configure	2013-04-19 04:12:59.000000000 +0200
---- configure-patched	2015-07-28 09:22:22.000000000 +0200
-*************** fi
-*** 3348,3354 ****
-  
-  
-  
-! CFLAGS="-Wall -fPIC -fno-strict-aliasing $CFLAGS"
-  
-  for ac_header in libftdi1/ftdi.h
-  do :
---- 3348,3354 ----
-  
-  
-  
-! CFLAGS="-Wall -fPIC -fno-strict-aliasing -DLIBFTDI1=\$(LIBFTDI1) $CFLAGS"
-  
-  for ac_header in libftdi1/ftdi.h
-  do :
+*** src/configure.orig	2015-09-12 14:44:56.813974110 +0000
+--- src/configure	2015-09-12 14:44:27.686084528 +0000
+*************** ac_hostname=`(hostname || uname -n) 2>/d
+*** 568,574 ****
+  #
+  # Initializations.
+  #
+! ac_default_prefix=/usr/local
+  ac_clean_files=
+  ac_config_libobj_dir=.
+  LIBOBJS=
+--- 568,574 ----
+  #
+  # Initializations.
+  #
+! ac_default_prefix=/usr
+  ac_clean_files=
+  ac_config_libobj_dir=.
+  LIBOBJS=

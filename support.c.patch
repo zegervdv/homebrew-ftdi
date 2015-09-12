@@ -1,0 +1,16 @@
+*** src/support.c.orig	2015-09-12 14:42:19.151851374 +0000
+--- src/support.c	2015-09-12 14:43:04.264395727 +0000
+***************
+*** 7,17 ****
+  
+  #include <string.h>
+  
+- #if LIBFTDI1 == 1
+  #include <libftdi1/ftdi.h>
+- #else
+- #include <ftdi.h>
+- #endif
+  
+  #include "mpsse.h"
+  #include "support.h"
+--- 7,13 ----
