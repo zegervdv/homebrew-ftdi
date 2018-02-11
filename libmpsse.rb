@@ -5,33 +5,33 @@
 class Libmpsse < Formula
   desc "Library for interface with SPI/I2C via FTDI's FT-2232 family"
   homepage "https://code.google.com/p/libmpsse/"
-  url "https://libmpsse.googlecode.com/files/libmpsse-1.3.tar.gz"
+  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libmpsse/libmpsse-1.3.tar.gz"
   version "1.3"
   sha256 "08f2a0025074720d40e29430089b1ab78d764756cc5d2bcb3148d98131b4074b"
 
   # depends_on "cmake" => :build
   # depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on "swig"
-  depends_on :python => :recommended
+  depends_on "python" => :recommended
 
   patch :p0 do
     url 'https://github.com/zegervdv/homebrew-ftdi/raw/master/Makefile.in.patch'
-    sha1 '992c0965f3037d159baed587a3a3d5e08ef6d6c6'
+    sha256 'de1b312373f003d019ee2ba64800a08bf3a217b1b3b2479582f8ff1aca6a3b33'
   end
 
   patch :p0 do
     url 'https://raw.githubusercontent.com/zegervdv/homebrew-ftdi/master/mpsse.c.patch'
-    sha1 '51c4b6b6eb2b0b5dc3f10ef8d5f8f9dfd40fc02d'
+    sha256 '54a9dafe1b8fbd5010843dde1ce9d99183ba7673daeb4803c847de3097d0e846'
   end
 
   patch :p0 do
     url 'https://raw.githubusercontent.com/zegervdv/homebrew-ftdi/master/mpsse.h.patch'
-    sha1 '16fd372972e70cee14d4bc93f51bcc8ce6a7ef62'
+    sha256 'd38458dcf9aeced05c6153cef3843c0829190dff57410507fb312947622229bf'
   end
 
   patch :p0 do
     url 'https://raw.githubusercontent.com/zegervdv/homebrew-ftdi/master/support.c.patch'
-    sha1 'a65aa65ad4e2e354b744267e02323b43f91d53f2'
+    sha256 '3aea7d0e3c35048ab36d35ab25c7939b350a365bc806040e35b61eebaf0e7f13'
   end
 
   def install
